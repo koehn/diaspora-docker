@@ -1,0 +1,19 @@
+postgres:
+  image: postgres:9.4
+  volumes:
+    - ../data/postgres:/var/lib/postgresql/data
+    - ../log/postgres:/var/log/postgresql
+  env:
+    - POSTGRES_USER=diaspora
+	- POSTGRES_PASSWORD=diaspora
+
+diaspora:
+  build: .
+  links:
+    - postgres
+  volumes:
+    - ../data/diaspora/uploads:/home/diaspora/diaspora/public/uploads
+    - ../config/diaspora:/home/diaspora/diaspora/config
+    - ../log/diaspora:/home/diaspora/diaspora/log
+  expose:
+    - "3000"
