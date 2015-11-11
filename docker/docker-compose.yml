@@ -1,6 +1,6 @@
 dbdata:
-  image: postgres:9.4
-  command: /bin/true
+  image: debian:jessie
+  command: tail -f /dev/null
   volumes:
     - /var/lib/postgresql/data
 
