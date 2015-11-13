@@ -1,5 +1,5 @@
 dbdata:
-  image: debian:jessie
+  build: database
   command: tail -f /dev/null
   volumes:
     - /var/lib/postgresql/data
@@ -13,7 +13,7 @@ postgres:
     - dbdata
 
 diaspora:
-  build: .
+  build: diaspora
   links:
     - postgres
   volumes:
