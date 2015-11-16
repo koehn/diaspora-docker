@@ -1,0 +1,26 @@
+dbdata:
+  build: database
+  privileged: true
+  volumes:
+    - ../data/postgres/:/var/cache/postgres
+    - /var/lib/postgresql/data
+
+postgres:
+  image: postgres:9.4
+  environment:
+    - POSTGRES_USER=diaspora
+    - POSTGRES_PASSWORD=diaspora
+  volumes_from:
+    - dbdata
+
+diaspora:
+  build: diaspora
+  links:
+    - postgres
+  volumes:
+    - ../data/diaspora/uploads:/home/diaspora/diaspora/public/uploads
+    - ../config/diaspora:/home/diaspora/diaspora/config
+    - ../log/diaspora:/home/diaspora/diaspora/log
+  expose:
+    - "3000"
+  working_dir: /home/diaspora
