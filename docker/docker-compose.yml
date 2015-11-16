@@ -1,8 +1,8 @@
 dbdata:
   build: database
-  command: tail -f /dev/null
+  privileged: true
   volumes:
-    - ../data/postgres/databaseimage.img:/var/cache/databaseimage.img
+    - ../data/postgres/:/var/cache/postgres
     - /var/lib/postgresql/data
 
 postgres:
