@@ -36,7 +36,7 @@ configuration: ## Section
     ## However changing http to https is okay and has no consequences.
     ## If you do change the URL, you will have to start again as the URL
     ## will be hardcoded into the database.
-    #url: "https://example.org/"
+    url: "https://demo-docker.diaspora.koehn.com/"
 
     ## Set the bundle of certificate authorities (CA) certificates.
     ## This is specific to your operating system.

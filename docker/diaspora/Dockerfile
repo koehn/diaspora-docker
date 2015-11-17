@@ -13,6 +13,6 @@ RUN rm /tmp/run_as_diaspora.sh /tmp/database.yml /tmp/diaspora.yml
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-ENTRYPOINT "/docker-entrypoint.sh"
+#ENTRYPOINT "/docker-entrypoint.sh"
 
-CMD "run"
+#CMD "run"
