@@ -11,8 +11,8 @@ COPY diaspora.yml /tmp/diaspora.yml
 RUN su - diaspora -c /tmp/run_as_diaspora.sh
 RUN rm /tmp/run_as_diaspora.sh /tmp/database.yml /tmp/diaspora.yml
 
-#COPY docker-entrypoint.sh /docker-entrypoint.sh
+COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-#ENTRYPOINT "/docker-entrypoint.sh"
+ENTRYPOINT "/docker-entrypoint.sh"
 
-#CMD "help"
+CMD "run"
