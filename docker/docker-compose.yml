@@ -19,7 +19,7 @@ diaspora:
     - postgres
   volumes:
     - ../data/diaspora/uploads:/home/diaspora/diaspora/public/uploads
-    - ../config/diaspora:/home/diaspora/diaspora/config
+    - ../config/diaspora:/home/diaspora/diaspora/config/remote-config
     - ../log/diaspora:/home/diaspora/diaspora/log
   expose:
     - "3000"

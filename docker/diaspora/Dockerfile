@@ -5,11 +5,9 @@ RUN apt-get update && apt-get install -y build-essential libssl-dev libcurl4-ope
 RUN adduser --gecos "" --disabled-login diaspora
 
 COPY run_as_diaspora.sh /tmp/run_as_diaspora.sh
-COPY database.yml /tmp/database.yml
-COPY diaspora.yml /tmp/diaspora.yml
 
 RUN su - diaspora -c /tmp/run_as_diaspora.sh
-RUN rm /tmp/run_as_diaspora.sh /tmp/database.yml /tmp/diaspora.yml
+RUN rm /tmp/run_as_diaspora.sh
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
