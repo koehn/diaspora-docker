@@ -13,14 +13,16 @@ postgres:
   # volumes_from:
   #   - dbdata
 
+redis:
+  image: redis:latest
+
 diaspora:
   build: diaspora
   links:
     - postgres
+    - redis
   volumes:
-    - ../data/diaspora/uploads:/home/diaspora/diaspora/public/uploads
-    - ../config/diaspora:/home/diaspora/diaspora/config/remote-config
-    - ../log/diaspora:/home/diaspora/diaspora/log
+    - home:/home
   expose:
     - "3000"
   working_dir: /home/diaspora
