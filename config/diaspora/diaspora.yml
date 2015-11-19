@@ -51,6 +51,7 @@ configuration: ## Section
     #redis: 'redis://example_host'
     #redis: 'redis://username:password@host:6379/0'
     #redis: 'unix:///tmp/redis.sock'
+    redis: 'redis://redis'
 
     ## Require SSL (default=true).
     ## When set, your pod will force the use of HTTPS in production mode.
