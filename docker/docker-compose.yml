@@ -14,7 +14,7 @@ postgres:
   #   - dbdata
 
 redis:
-  image: redis:latest
+  build: redis
 
 diaspora:
   build: diaspora
