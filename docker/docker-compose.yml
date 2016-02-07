@@ -23,6 +23,7 @@ diaspora:
     - redis
   volumes:
     - home:/home
+    - ../config/diaspora:/home/diaspora/diaspora/config/remote-config
   expose:
     - "3000"
   working_dir: /home/diaspora
