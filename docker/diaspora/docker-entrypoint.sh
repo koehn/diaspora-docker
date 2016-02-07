@@ -5,7 +5,9 @@ function do_as_diaspora {
 }
 
 function run {
+	echo "Staring Diaspora"
 	do_as_diaspora "./script/server"
+	echo "Really wasn't expecting this"
 }
 
 function init_db {
