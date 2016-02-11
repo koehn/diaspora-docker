@@ -1,17 +1,10 @@
-dbdata:
-   build: database
-   privileged: true
-   volumes:
-     - ../data/postgres/:/var/cache/postgres
-     - /var/lib/postgresql/data
-
 postgres:
-  image: postgres:9.4
+  build: database
   environment:
     - POSTGRES_USER=diaspora
     - POSTGRES_PASSWORD=diaspora
-  volumes_from:
-    - dbdata
+  volumes:
+    - ../data/postgres/:/var/lib/postgresql
 
 redis:
   build: redis
