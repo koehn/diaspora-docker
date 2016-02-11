@@ -15,6 +15,8 @@ VOLUME /home/diaspora/diaspora/config/remote-config
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-ENTRYPOINT "/docker-entrypoint.sh"
+#ENTRYPOINT "/docker-entrypoint.sh"
 
-CMD "run"
+#CMD "run"
+
+ENTRYPOINT "/bin/bash"
