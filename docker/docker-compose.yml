@@ -3,11 +3,14 @@ postgres:
   environment:
     - POSTGRES_USER=diaspora
     - POSTGRES_PASSWORD=diaspora
+    - PGDATA=/var/lib/postgresql/data/pgdata
   volumes:
-    - ../data/postgres/:/var/lib/postgresql
+    - ../data/postgres:/var/cache/postgres
+  privileged: true
 
 redis:
   build: redis
+  command: redis-server --appendonly yes
 
 diaspora:
   build: diaspora
