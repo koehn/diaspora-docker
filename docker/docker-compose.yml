@@ -3,6 +3,7 @@ postgres:
   environment:
     - POSTGRES_USER=diaspora
     - POSTGRES_PASSWORD=diaspora
+    - POSTGRES_DB=diaspora_production
     - PGDATA=/var/lib/postgresql/data/pgdata
   volumes:
     - ../data/postgres:/var/cache/postgres
@@ -22,3 +23,4 @@ diaspora:
   expose:
     - "3000"
   working_dir: /home/diaspora
+  privileged: true
