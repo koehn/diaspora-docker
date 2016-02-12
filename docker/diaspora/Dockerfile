@@ -9,8 +9,12 @@ COPY run_as_diaspora.sh /tmp/run_as_diaspora.sh
 RUN su - diaspora -c /tmp/run_as_diaspora.sh
 RUN rm /tmp/run_as_diaspora.sh
 
+RUN mkdir -p /home/diaspora/diaspora/config/remote-config
+
+VOLUME /home/diaspora/diaspora/config/remote-config
+
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
-#ENTRYPOINT "/docker-entrypoint.sh"
+ENTRYPOINT ["/docker-entrypoint.sh"]
 
-#CMD "run"
+CMD ["run"]

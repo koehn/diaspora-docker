@@ -5,7 +5,9 @@ function do_as_diaspora {
 }
 
 function run {
+	echo "Staring Diaspora"
 	do_as_diaspora "./script/server"
+	echo "Really wasn't expecting this"
 }
 
 function init_db {
@@ -18,6 +20,8 @@ function precompile_assets {
 	do_as_diaspora "bin/rake assets:precompile"
 }
 
+echo "Starting docker-entrypoint with argument '$1'"
+
 if [ "$1" = 'run' ]; then
 	run
 elif [ "$1" = 'init-db' ]; then
@@ -26,4 +30,7 @@ elif [ "$1" = 'upgrade' ]; then
 	do_as_diaspora "rvm update"
 	do_as_diaspora "git checkout Gemfile.lock db/schema.rb && git pull && cd .. && cd - && gem install bundler && bin/bundle && bin/rake db:migrate "
 	precompile_assets
+else 
+	echo "Not sure what to do; here have a shell"
+	/bin/bash
 fi
