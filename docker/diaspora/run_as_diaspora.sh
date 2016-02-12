@@ -12,4 +12,5 @@ cd /home/diaspora && \
   ln -s remote-config/database.yml config/database.yml && \
   ln -s remote-config/diaspora.yml config/diaspora.yml && \
   gem install bundler && \
+  mkdir /tmp/.eye && ln -s /tmp/.eye /home/diaspora/.eye && \
   RAILS_ENV=production DB=postgres  bin/bundle install --without test development

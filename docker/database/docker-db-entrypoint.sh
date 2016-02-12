@@ -1,6 +1,6 @@
 export IMAGE_FILE=${IMAGE_FILE:-/var/cache/postgres/databaseimage.img}
 export MOUNTPOINT=${MOUNTPOINT:-/var/lib/postgresql}
-export SIZE=${SIZE:-80M}
+export SIZE=${SIZE:-100M}
 
 echo IMAGE_FILE: $IMAGE_FILE
 echo MOUNTPOINT: $MOUNTPOINT
@@ -12,7 +12,7 @@ echo SIZE: $SIZE
 mkdir -p /var/cache/postgres
 
 if [ ! -f $IMAGE_FILE ]; then \
-    dd if=/dev/zero of=$IMAGE_FILE bs=800M seek=100 count=0 && \
+    dd if=/dev/zero of=$IMAGE_FILE bs=$SIZE seek=100 count=0 && \
     mkfs -t ext4 $IMAGE_FILE ; fi
 
 rm -rf $MOUNTPOINT/*
