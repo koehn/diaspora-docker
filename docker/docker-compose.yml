@@ -15,8 +15,7 @@ diaspora:
     - postgres
     - redis
   volumes:
-    - home:/home
-    - ../config/diaspora:/home/diaspora/diaspora/config/remote-config
+    - ../data/diaspora:/home/diaspora
   expose:
     - "3000"
   working_dir: /home/diaspora
