@@ -19,7 +19,7 @@ diaspora:
     - postgres
     - redis
   volumes:
-    - ../data/diaspora:/home/diaspora
+    - ../data/diaspora:/home/diaspora/diaspora
   expose:
     - "3000"
   working_dir: /home/diaspora
