@@ -6,6 +6,8 @@ RUN adduser --gecos "" --disabled-login diaspora
 
 VOLUME /home/diaspora/diaspora
 
+RUN chmod 777 /home/diaspora/diaspora
+
 COPY run_as_diaspora.sh /run_as_diaspora.sh
 
 #RUN su - diaspora -c /tmp/run_as_diaspora.sh
