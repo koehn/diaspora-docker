@@ -32,7 +32,7 @@ development:
   database: diaspora_development
 production:
   <<: *combined
-  database: diaspora_production
+  database: diaspora
 test:
   <<: *combined
   database: "diaspora_test"

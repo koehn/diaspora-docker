@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function do_as_diaspora {
-	su - diaspora -c "cd /home/diaspora/diaspora && RAILS_ENV=production DB=postgres $1"
+	su - diaspora -c "cd /home/diaspora/diaspora && rvm use 2.1 && RAILS_ENV=production DB=postgres $1"
 }
 
 function setup {
