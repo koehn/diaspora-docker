@@ -4,14 +4,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get install -y build-essential l
 
 RUN adduser --gecos "" --disabled-login diaspora
 
-VOLUME /home/diaspora/diaspora
-
-RUN chmod 777 /home/diaspora/diaspora
-
 COPY run_as_diaspora.sh /run_as_diaspora.sh
-
-#RUN su - diaspora -c /tmp/run_as_diaspora.sh
-#RUN rm /tmp/run_as_diaspora.sh
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
