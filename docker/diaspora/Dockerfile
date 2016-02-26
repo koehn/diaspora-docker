@@ -8,6 +8,8 @@ COPY run_as_diaspora.sh /run_as_diaspora.sh
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 
+VOLUME /config
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
 CMD ["run"]

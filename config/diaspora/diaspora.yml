@@ -59,7 +59,7 @@ configuration: ## Section
     ## you're not using SSL. Also there is no guarantee that posting to
     ## services will be possible if SSL is disabled.
     ## Do not change this default unless you are sure!
-    #require_ssl: true
+    require_ssl: false
 
     ## Single-process mode (default=false).
     ## If set to true, Diaspora will work with just the appserver (Unicorn by
@@ -166,7 +166,7 @@ configuration: ## Section
     ## Where the appserver should listen to (default=unix:tmp/diaspora.sock)
     #listen: 'unix:tmp/diaspora.sock'
     #listen: 'unix:/run/diaspora/diaspora.sock'
-    listen: '127.0.0.1:3000'
+    listen: '*:3000'
 
     ## Set the path for the PID file of the unicorn master process (default=none)
     #pid: '/run/diaspora/diaspora.pid'

@@ -1,11 +1,11 @@
 #!/bin/bash
 
 function do_as_diaspora {
-	su - diaspora -c "cd /home/diaspora/diaspora && rvm use 2.1 && RAILS_ENV=production DB=postgres $1"
+	su -l -c "cd /home/diaspora/diaspora && RAILS_ENV=production DB=postgres $1" diaspora
 }
 
 function setup {
-	su - diaspora -c "/run_as_diaspora.sh"
+	su -l diaspora -c "/run_as_diaspora.sh"
 }
 
 function run {
@@ -15,9 +15,9 @@ function run {
 }
 
 function init_db {
-	do_as_diaspora "bin/rake db:create db:schema:load"
-	precompile_assets
-	run
+	do_as_diaspora "bin/rake db:create db:schema:load" && \
+	  precompile_assets && \
+	  run
 }
 
 function precompile_assets {

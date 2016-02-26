@@ -23,6 +23,7 @@ services:
       - redis
     volumes:
       - diaspora:/home/diaspora
+      - ../config/diaspora:/config
     ports:
       - "3000"
     working_dir: /home/diaspora
