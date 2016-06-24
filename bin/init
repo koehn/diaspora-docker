@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#
+# Set up the containers and data directories.
+
+# `data/diaspora` will contain the home directory for the `diaspora` user in the diaspora container.
+# It needs to be empty to get started.
+rm -rf data/diaspora/* data/diaspora/.??**
+
+# `data/postgres` will contain the data for the postgres database.
+rm -rf data/postgres/*
+
+cd docker
+pwd
+docker-compose build

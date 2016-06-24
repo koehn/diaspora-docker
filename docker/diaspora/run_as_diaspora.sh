@@ -6,10 +6,4 @@ cd $HOME && \
   echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> $HOME/.bashrc && \
   source "/home/diaspora/.rvm/scripts/rvm" && \
   rvm autolibs read-fail && \
-  rvm install 2.2 && \
-  git clone git://github.com/diaspora/diaspora.git && \
-  cd diaspora && \
-  gem install bundler && \
-  RAILS_ENV=production DB=postgres  bin/bundle install --without test development && \
-  ln -s /config/database.yml /home/diaspora/diaspora/config && \
-  ln -s /config/diaspora.yml /home/diaspora/diaspora/config 
+  rvm install 2.2
