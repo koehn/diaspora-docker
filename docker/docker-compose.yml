@@ -22,7 +22,7 @@ services:
       - postgres
       - redis
     volumes:
-      - diaspora:/home/diaspora
+      - ../data/diaspora:/home/diaspora/
       - ../config/diaspora:/config
     ports:
       - "3000"
