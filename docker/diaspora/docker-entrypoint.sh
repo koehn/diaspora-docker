@@ -14,6 +14,10 @@ function run {
 	echo "Really wasn't expecting this"
 }
 
+function bundle {
+	do_as_diaspora "gem install bundler && bin/bundle"
+}
+
 function init_db {
 	do_as_diaspora "bin/rake db:create db:schema:load" && \
 	  precompile_assets && \
@@ -28,6 +32,8 @@ echo "Starting docker-entrypoint with argument '$1'"
 
 if [ "$1" = 'run' ]; then
 	run
+elif [ "$1" = 'bundle' ]; then
+	bundle
 elif [ "$1" = 'setup' ]; then
 	setup
 elif [ "$1" = 'init-db' ]; then

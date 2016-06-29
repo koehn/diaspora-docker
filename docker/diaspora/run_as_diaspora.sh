@@ -5,4 +5,5 @@ cd $HOME && \
   echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"' >> $HOME/.bashrc && \
   source "/home/diaspora/.rvm/scripts/rvm" && \
   rvm autolibs read-fail && \
-  rvm install 2.2
+  rvm install 2.2 && \
+  git clone https://github.com/diaspora/diaspora.git
